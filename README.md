@@ -1,77 +1,36 @@
----
-output: github_document
----
+<head>
+    <!-- This will show up on the tab in your browser -->
+    <title>My Portfolio</title>
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+    <!-- This links your CSS file to the HTML -->
+    <link rel="stylesheet" type="text/css" href="index.css">
 
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
+    <!-- Adding the fonts to our page -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
 
-# **cptcity for the Google Earth Engine JavaScript API (Code Editor)** <a href="#"><img src="man/figures/ee-cptcity.gif" width="100%"></a>
+<body>
+    <!-- This is the start of the "About" section -->
+    <div class="about">
+        <h1>About</h1>
+        <p>Welcome to my portfolio</p>
+    </div>
 
-<!-- badges: start -->
-<!-- badges: end -->
+    <!-- This is the start of the "Projects" section -->
+    <div class="projects">
+        <h1>Projects</h1>
 
-## 📋 **Table of contents**
+        <!-- Project 1 -->
+        <div class="project">
+            <!-- Image-->
+            <img class="project-thumbnail" src="imgs/project.png">
+            <!-- Project Header and Description -->
+            <div class="project-content">
+                <h3>Sample Project</h3>
+                <p>This is a cool project that does things</p>
+                <a href="https://example.com"><button>Project Link</button></a>
+            </div>
+        </div>
 
-1. What is Google Earth Engine ?
-2. What is cptcity and why ?
-3. Top of the cpt palettes
-4. Calling module and use it!
-
-### 🔴 **1. What is Google Earth Engine ?**
-
-<a href="#"><img src="https://user-images.githubusercontent.com/23284899/152171996-54afdafa-4456-4d63-9c92-dca515b100a8.png" width="100%"></a>
-Google Earth Engine is a cloud-based platform that helps access high-performance computing resources for processing and analyzing large geospatial datasets [(Noel Golerick et al.,2017).](https://www.sciencedirect.com/science/article/pii/S0034425717302900)
-
-### 🔴 **2. What is cptcity and why ?**
-
-Cptcity is a solium platform where you can find multiple colour palettes for various themes related to cartography, technical illustration and design. The archive supports various formats and is organised by author. Cptcity currently has colour palettes for the most popular desktop Geographic Information Systems such as **QGIS**, **GRASS** , **SAGA** , **ARCGIS** , and others. Currently, it has **7000 colour palettes**, however in this second version of ee-cptcity module more than **300** colour palettes were incorporated along with 2 popular palettes like **rocket** , **mako** and **turbe**.
-
-### 🔴 **3. Top of the cpt palettes**
-
-The 75 most popular cpt files with the number downloaded shown in parentheses. The arrows indicate the change in rank in the last month. This list is compiled from the files downloaded in the last year (a total of 21,647 files) and is updated irregularly, most recently on 04/03/2022.
-
-<a href="http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/totp-cpt.html">
- <img src="man/figures/cptcitytop.png" width="100%">
-</a>
-
-### 🔴 **4. Calling module and use it!**
-
-```{r, eval = FALSE}
-var cpt = require('users/ambarja/ee-cptcity:cptcity');
-```
-
-```{r, eval = FALSE}
-var srtm = ee.Image('NASA/NASADEM_HGT/001')
-           .select('elevation')
-
-var viz = {
-  min: 400,
-  max: 4000,
-  palette: cpt.pal.grass_elevation
-  };
-```
-
-```{r, eval = FALSE}
-Map.setZoom(1);
-Map.addLayer(srtm,viz,'Elevation(m)');
-```
-
-<img src="man/figures/p0.png" width="100%"/>
-<br>
-
-## 📚 **References**
-
-- _David Montero, 2021, ee-pokepalettes, https://github.com/davemlz/ee-pokepalettes_
-
-- _Gennadii Donchyts, Fedor Baart & Justin Braaten ,2020,https://github.com/gee-community/ee-palettes_
-
-- _Sergio Ibarra Espinosa, 2017, cptcity, https://github.com/ibarraespinosa/cptcity_
-
+    </div>
+</body>
