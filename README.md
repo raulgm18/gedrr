@@ -1,29 +1,77 @@
-# gedrr
-# Install released version from CRAN
-install.packages("pkgdown")
-# Run once to configure your package to use pkgdown
-usethis::use_pkgdown()
-pkgdown::build_site()
-usethis::use_pkgdown_github_pages()
-url: https://pkgdown.r-lib.org
-template:
-  bootstrap: 5
-  bootswatch: cerulean
-lang: es
-reference:
-- title: "Connecting to Spark"
-  desc: >
-    Functions for installing Spark components and managing
-    connections to Spark
-  contents: 
-  - spark_config
-  - spark_connect
-  - spark_disconnect
-  - spark_install
-  - spark_log
-- title: "Reading and Writing Data"
-  desc: "Functions for reading and writing Spark DataFrames."
-  contents:
-  - starts_with("spark_read")
-  - starts_with("spark_write")
-  - matches("saveload")
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# **cptcity for the Google Earth Engine JavaScript API (Code Editor)** <a href="#"><img src="man/figures/ee-cptcity.gif" width="100%"></a>
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## 📋 **Table of contents**
+
+1. What is Google Earth Engine ?
+2. What is cptcity and why ?
+3. Top of the cpt palettes
+4. Calling module and use it!
+
+### 🔴 **1. What is Google Earth Engine ?**
+
+<a href="#"><img src="https://user-images.githubusercontent.com/23284899/152171996-54afdafa-4456-4d63-9c92-dca515b100a8.png" width="100%"></a>
+Google Earth Engine is a cloud-based platform that helps access high-performance computing resources for processing and analyzing large geospatial datasets [(Noel Golerick et al.,2017).](https://www.sciencedirect.com/science/article/pii/S0034425717302900)
+
+### 🔴 **2. What is cptcity and why ?**
+
+Cptcity is a solium platform where you can find multiple colour palettes for various themes related to cartography, technical illustration and design. The archive supports various formats and is organised by author. Cptcity currently has colour palettes for the most popular desktop Geographic Information Systems such as **QGIS**, **GRASS** , **SAGA** , **ARCGIS** , and others. Currently, it has **7000 colour palettes**, however in this second version of ee-cptcity module more than **300** colour palettes were incorporated along with 2 popular palettes like **rocket** , **mako** and **turbe**.
+
+### 🔴 **3. Top of the cpt palettes**
+
+The 75 most popular cpt files with the number downloaded shown in parentheses. The arrows indicate the change in rank in the last month. This list is compiled from the files downloaded in the last year (a total of 21,647 files) and is updated irregularly, most recently on 04/03/2022.
+
+<a href="http://soliton.vm.bytemark.co.uk/pub/cpt-city/views/totp-cpt.html">
+ <img src="man/figures/cptcitytop.png" width="100%">
+</a>
+
+### 🔴 **4. Calling module and use it!**
+
+```{r, eval = FALSE}
+var cpt = require('users/ambarja/ee-cptcity:cptcity');
+```
+
+```{r, eval = FALSE}
+var srtm = ee.Image('NASA/NASADEM_HGT/001')
+           .select('elevation')
+
+var viz = {
+  min: 400,
+  max: 4000,
+  palette: cpt.pal.grass_elevation
+  };
+```
+
+```{r, eval = FALSE}
+Map.setZoom(1);
+Map.addLayer(srtm,viz,'Elevation(m)');
+```
+
+<img src="man/figures/p0.png" width="100%"/>
+<br>
+
+## 📚 **References**
+
+- _David Montero, 2021, ee-pokepalettes, https://github.com/davemlz/ee-pokepalettes_
+
+- _Gennadii Donchyts, Fedor Baart & Justin Braaten ,2020,https://github.com/gee-community/ee-palettes_
+
+- _Sergio Ibarra Espinosa, 2017, cptcity, https://github.com/ibarraespinosa/cptcity_
+
